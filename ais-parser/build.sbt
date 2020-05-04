@@ -65,16 +65,13 @@ lazy val root = Project("ais-parser-test", file("."))
     .settings(
         inThisBuild(List(
             organization := "org.josteinbf",
-            scalaVersion := "2.12.11"
+            scalaVersion := "2.12.11",
+            scalacOptions += "-deprecation",
         )),
         name := "aisparsertest",
         libraryDependencies ++= Seq(
-            // scala-ais-codec is from
-            // https://github.com/svroonland/scodec-ais
-            // To be available, download the source and run
-            // `sbt publishLocal` to put the jar in the local ivy repo
-            // where sbt can find it
-            "com.example" %% "scala-ais-codec" % "0.1.0-SNAPSHOT",
+            // "dk.tbsalling" % "aismessages" % "3.1.0",
+            "dk.tbsalling" % "aismessages" % "2.2.1",
         ),
     )
 
